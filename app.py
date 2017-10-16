@@ -18,9 +18,21 @@ def homepage1():
 def homepage2():
     req = request.get_json(silent=True, force=True)
 
+    text = req.get("result").get("parameters").get("data")
+
+    speech = ""
+    if str(text).lower() == "gn":
+        speech = "Good Night"
+    elif str(text).lower() == "gm":
+        speech = "Good Morning"
+    elif str(text).lower() == "ga":
+        speech = "Good Afternoon"
+    else:
+        speech = "Hello"
+
     print("Request:")
     print(json.dumps(req, indent=4))
-    speech = "Hello"
+    
     res = {
         "speech": speech,
         "displayText": speech,
