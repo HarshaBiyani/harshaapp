@@ -28,7 +28,9 @@ def homepage2():
     elif str(text).lower() == "ga":
         speech = "Good Afternoon"
     else:
-        speech = "Hello"
+        import urllib
+        a = urllib.urlopen("http://www.google.co.in", proxies=None)
+        speech = "Hello" + "--->"+str(len(a))
 
     print("Request:")
     print(json.dumps(req, indent=4))
