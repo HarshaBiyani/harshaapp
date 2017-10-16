@@ -10,6 +10,10 @@ app = Flask(__name__)
 def homepage():
     return "Welcome to API.AI"
 
+@app.route('/test')
+def homepage1():
+    return "Test page"
+
 if __name__ == '__main__':
     port = int(os.getenv('PORT', 5000))
 
