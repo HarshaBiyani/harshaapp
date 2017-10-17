@@ -21,6 +21,15 @@ def homepage():
     con.close()
     return "Welcome to API.AI" + "\n\n----\n" + str(data)
 
+@app.route('/wish',methods=["GET"])
+def happydiwali():
+    name = ""
+    try:
+        name = request.args.get("name")
+    except:
+        pass
+    return "<b>Happy Diwali "+str(name)+"</b>"
+
 @app.route('/test')
 def homepage1():
     return "Test page"
