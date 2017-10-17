@@ -8,6 +8,11 @@ app = Flask(__name__)
 
 @app.route('/')
 def homepage():
+    import sqlite3
+    con = sqlite3.connect("sample.db")
+    cur = con.cursor()
+    cur.execute("create table IF NOT EXISTS sample(name text)")
+    con.close()
     return "Welcome to API.AI"
 
 @app.route('/test')
