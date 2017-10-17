@@ -12,8 +12,12 @@ def homepage():
     con = sqlite3.connect("sample.db")
     cur = con.cursor()
     cur.execute("create table IF NOT EXISTS sample(name text)")
+    cur.execute("insert into sample values('PHarsha')")
+    cur.execute("select * from sample")
+    data = cur.fetchall()
+    
     con.close()
-    return "Welcome to API.AI"
+    return "Welcome to API.AI" + "\n\n----\n" + str(data)
 
 @app.route('/test')
 def homepage1():
