@@ -28,7 +28,7 @@ def happydiwali():
         name = request.args.get("name")
     except:
         pass
-    return "<body style='background-color:black;'><b style='position:absolute; top:180px; left:220px; color:white; font-size:x-large;'> "+str(name)+"</b><img src='http://i.123g.us/c/eoct_diwali_celebration/card/105182.gif'/><em style='color:white;position:absolute;top:450px;'>Developed by Harsha Biyani</em></body>"
+    return "<body style='background-color:black;'><b style='position:absolute; top:180px; left:220px; color:white; font-size:x-large;'> "+str(name)+"</b><img src='http://i.123g.us/c/eoct_diwali_celebration/card/105182.gif'/><em style='color:white;position:absolute;top:450px;left:10px;'>Developed by Harsha Biyani</em></body>"
 
 @app.route('/test')
 def homepage1():
