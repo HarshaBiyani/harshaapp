@@ -13,7 +13,9 @@ def homepage():
     cur = con.cursor()
     cur.execute("create table IF NOT EXISTS sample(name text)")
     cur.execute("insert into sample values('PHarsha')")
+    con.commit()
     cur.execute("select * from sample")
+    
     data = cur.fetchall()
     
     con.close()
